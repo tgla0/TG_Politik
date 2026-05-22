@@ -21,10 +21,11 @@
 }
 
 :root {
-  --blue-dark:    #162510;
-  --blue-mid:     #25461a;
-  --blue-accent:  #4a7c28;
-  --blue-light:   #d4e8b8;
+  --blue-dark:    #004f7a;
+  --blue-mid:     #006ba0;
+  --blue-accent:  #0080c8;
+  --blue-light:   #d0eaf6;
+  --csu-green:    #a2c516;
   --gold:         #c9a84c;
   --white:        #ffffff;
   --gray-50:      #f8fafc;
@@ -39,8 +40,8 @@
   --max-w: 1200px;
   --radius: 8px;
   --radius-lg: 16px;
-  --shadow: 0 4px 24px rgba(22,37,16,0.10);
-  --shadow-lg: 0 12px 48px rgba(22,37,16,0.18);
+  --shadow: 0 4px 24px rgba(0,79,122,0.10);
+  --shadow-lg: 0 12px 48px rgba(0,79,122,0.18);
   --transition: 0.25s ease;
 }
 
@@ -132,7 +133,7 @@ p { color: var(--gray-700); }
   background: var(--blue-mid);
   border-color: var(--blue-mid);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74,124,40,0.35);
+  box-shadow: 0 6px 20px rgba(0,128,200,0.35);
 }
 
 .btn-outline {
@@ -159,7 +160,7 @@ p { color: var(--gray-700); }
 
 #header.scrolled {
   background: var(--blue-dark);
-  box-shadow: 0 2px 20px rgba(22,37,16,0.25);
+  box-shadow: 0 2px 20px rgba(0,79,122,0.25);
 }
 
 .nav-container {
@@ -205,7 +206,7 @@ p { color: var(--gray-700); }
   color: var(--white) !important;
   padding: 0.45rem 1.1rem !important;
 }
-.nav-cta:hover { background: #2d5a18 !important; }
+.nav-cta:hover { background: #005a8e !important; }
 
 .nav-toggle {
   display: none;
@@ -318,7 +319,7 @@ p { color: var(--gray-700); }
 
 /* The section#hero IS the hero — override the .hero grid defaults */
 #hero {
-  background: linear-gradient(135deg, #0d1a09 0%, #172e10 50%, #2a2010 100%);
+  background: linear-gradient(135deg, #001e3a 0%, #002d5a 50%, #003d6b 100%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -329,7 +330,7 @@ p { color: var(--gray-700); }
 
 /* ---------- INNER PAGE HERO ---------- */
 .page-hero {
-  background: linear-gradient(135deg, #0d1a09 0%, #172e10 50%, #2a2010 100%);
+  background: linear-gradient(135deg, #001e3a 0%, #002d5a 50%, #003d6b 100%);
   padding: calc(var(--nav-h) + 4rem) 0 4rem;
   text-align: center;
   color: var(--white);
@@ -693,8 +694,8 @@ blockquote cite {
 }
 
 .mandate-card {
-  background: rgba(74,124,40,0.05);
-  border: 1px solid rgba(74,124,40,0.18);
+  background: rgba(0,128,200,0.05);
+  border: 1px solid rgba(0,128,200,0.18);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
   display: flex;
@@ -709,7 +710,7 @@ blockquote cite {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--blue-accent);
+  background: var(--csu-green);
 }
 .mandate-card:hover {
   box-shadow: var(--shadow);

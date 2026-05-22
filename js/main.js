@@ -148,43 +148,43 @@
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
 
-    // 1. Füllung (dunkles Grün)
+    // 1. Füllung (dunkles Blau)
     traceAll();
-    ctx.fillStyle = 'rgba(30,65,15,0.18)';
+    ctx.fillStyle = 'rgba(0,64,120,0.18)';
     ctx.fill('evenodd');
 
-    // 2. Landkreisgrenzen (sehr dezent, olivgrün)
+    // 2. Landkreisgrenzen (sehr dezent, blau)
     if (districtRings.length) {
       ctx.beginPath();
       districtRings.forEach(function(r) { tracePath(r); });
-      ctx.strokeStyle = 'rgba(120,160,70,0.22)';
+      ctx.strokeStyle = 'rgba(0,100,160,0.22)';
       ctx.lineWidth   = 0.5;
       ctx.stroke();
     }
 
-    // 3. Breites äußeres Glühen (warmes Grün)
+    // 3. Breites äußeres Glühen (CSU-Blau)
     ctx.save();
-    ctx.shadowColor = 'rgba(90,160,50,0.9)';
+    ctx.shadowColor = 'rgba(0,128,200,0.9)';
     ctx.shadowBlur  = 36;
     traceOuter();
-    ctx.strokeStyle = 'rgba(100,170,55,0.4)';
+    ctx.strokeStyle = 'rgba(0,128,200,0.4)';
     ctx.lineWidth   = 4;
     ctx.stroke();
     ctx.restore();
 
-    // 4. Mittlere Glüh-Schicht (helles Gelbgrün)
+    // 4. Mittlere Glüh-Schicht (helles Blau)
     ctx.save();
-    ctx.shadowColor = 'rgba(170,215,100,0.7)';
+    ctx.shadowColor = 'rgba(100,180,230,0.7)';
     ctx.shadowBlur  = 10;
     traceOuter();
-    ctx.strokeStyle = 'rgba(185,220,110,0.78)';
+    ctx.strokeStyle = 'rgba(100,180,230,0.78)';
     ctx.lineWidth   = 1.5;
     ctx.stroke();
     ctx.restore();
 
-    // 5. Scharfe Linie (hell-olivweiß)
+    // 5. Scharfe Linie (hellblau-weiß)
     traceOuter();
-    ctx.strokeStyle = 'rgba(220,235,170,0.92)';
+    ctx.strokeStyle = 'rgba(180,220,255,0.92)';
     ctx.lineWidth   = 0.8;
     ctx.stroke();
 
@@ -193,16 +193,16 @@
     var dl = Math.max(6, mapScale * 0.08);
     ctx.setLineDash([dl, dl * 0.5]);
     ctx.lineDashOffset = -(t * 28) % (dl * 1.5);
-    ctx.strokeStyle    = 'rgba(220,240,160,0.38)';
+    ctx.strokeStyle    = 'rgba(0,128,200,0.38)';
     ctx.lineWidth      = 0.7;
     ctx.stroke();
     ctx.setLineDash([]);
 
-    // 7. Verbindungslinien (olivgrün)
+    // 7. Verbindungslinien (blau)
     ctx.save();
     ctx.setLineDash([3, 5]);
     ctx.lineDashOffset = -(t * 12) % 8;
-    ctx.strokeStyle    = 'rgba(120,160,70,0.28)';
+    ctx.strokeStyle    = 'rgba(0,100,160,0.28)';
     ctx.lineWidth      = 0.9;
     CONNECTIONS.forEach(function(pair) {
       var a = CITIES[pair[0]], b = CITIES[pair[1]];
@@ -215,16 +215,16 @@
     ctx.setLineDash([]);
     ctx.restore();
 
-    // 8. Scan-Streifen (grünlich)
+    // 8. Scan-Streifen (blau)
     var sf    = (Math.sin(t * 0.22) + 1) / 2;
     var leftX = proj(BBOX.minLon, midLat())[0];
     var rigX  = proj(BBOX.maxLon, midLat())[0];
     var scanX = leftX + (rigX - leftX) * sf;
     var sw    = W * 0.06;
     var sg    = ctx.createLinearGradient(scanX - sw, 0, scanX + sw, 0);
-    sg.addColorStop(0,   'rgba(120,170,60,0)');
-    sg.addColorStop(0.5, 'rgba(120,170,60,0.09)');
-    sg.addColorStop(1,   'rgba(120,170,60,0)');
+    sg.addColorStop(0,   'rgba(0,128,200,0)');
+    sg.addColorStop(0.5, 'rgba(0,128,200,0.09)');
+    sg.addColorStop(1,   'rgba(0,128,200,0)');
     ctx.fillStyle = sg;
     ctx.fillRect(scanX - sw, 0, sw * 2, H);
 
