@@ -122,18 +122,6 @@
     })
     .catch(function() { /* Fallback bleibt */ });
 
-  // Sekundär: Landkreisgrenzen (click_that_hood)
-  fetch('https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/bavaria.geojson')
-    .then(function(r) { if (!r.ok) throw r.status; return r.json(); })
-    .then(function(data) {
-      data.features.forEach(function(feat) {
-        var geom = feat.geometry;
-        var polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
-        polys.forEach(function(poly) { districtRings.push(poly[0]); });
-      });
-    })
-    .catch(function() { /* ohne Landkreise zeichnen */ });
-
   // ── Pfad-Hilfsfunktionen ─────────────────
   function tracePath(ring) {
     if (!ring || ring.length < 2) return;

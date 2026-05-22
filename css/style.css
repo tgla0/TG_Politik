@@ -2,6 +2,17 @@
    DR. TOBIAS GLAS – POLITISCHE WEBSITE
    ============================================= */
 
+/* ---------- FONTS ---------- */
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 100; src: url('../fonts/inter-v20-latin-100.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 200; src: url('../fonts/inter-v20-latin-200.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 300; src: url('../fonts/inter-v20-latin-300.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 400; src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 500; src: url('../fonts/inter-v20-latin-500.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 600; src: url('../fonts/inter-v20-latin-600.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 700; src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 800; src: url('../fonts/inter-v20-latin-800.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 900; src: url('../fonts/inter-v20-latin-900.woff2') format('woff2'); }
+
 /* ---------- RESET & VARIABLES ---------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -296,6 +307,15 @@ p { color: var(--gray-700); }
   flex-wrap: wrap;
 }
 
+.hero-contact-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+.hero-contact-link:hover { color: var(--white); }
+
 /* The section#hero IS the hero — override the .hero grid defaults */
 #hero {
   background: linear-gradient(135deg, #0d1a09 0%, #172e10 50%, #2a2010 100%);
@@ -460,6 +480,7 @@ blockquote cite {
   color: var(--blue-accent);
   text-align: right;
   padding-top: 0.2rem;
+  padding-right: 1.5rem;
   letter-spacing: 0.02em;
 }
 
@@ -548,6 +569,14 @@ blockquote cite {
 }
 .social-link svg { width: 18px; height: 18px; }
 .social-link:hover { background: var(--blue-accent); color: var(--white); transform: translateY(-2px); }
+
+.social-link--instagram {
+  width: 52px;
+  height: 52px;
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+.social-link--instagram svg { width: 24px; height: 24px; }
 
 /* Contact CTA */
 .contact-cta {
